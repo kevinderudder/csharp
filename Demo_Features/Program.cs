@@ -8,7 +8,13 @@ namespace Demo_Features
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var employees = ElmosService.GetElmosPeopleAtYourService();
+            var names = GetNames(employees);
+
+            foreach (var name in names)
+            {
+                Console.WriteLine($"{name} at your service");
+            }
         }
 
         static IEnumerable<string> GetNames(IEnumerable<Person> people)
